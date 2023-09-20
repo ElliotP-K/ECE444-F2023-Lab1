@@ -31,28 +31,3 @@ def index():
         session['email'] = form.email.data
         return redirect(url_for('index'))
     return render_template('index.html',form = form, name = session.get('name'), email = session.get('email'))
-
-# @app.route('/', methods=['GET', 'POST'])
-# def index():
-#     name = None
-#     form = NameForm()
-#     if form.validate_on_submit():
-#         name = form.name.data
-#         form.name.data = ''
-#     return render_template('index.html', form=form, name=name)
-
-# @app.route('/', methods=['GET', 'POST'])
-# def index():
-#     name = None
-#     form = NameForm()
-#     if form.validate_on_submit():
-#         session['name'] = form.name.data
-#         return redirect(url_for('index'))
-#     return render_template('index.html', form=form, name=session.get('name'))
-
-# @app.route('/')
-# def index():
-#     return render_template('index.html', name=session.get('name'), email=session.get('email'))
-# @app.route('/user/<name>')
-# def user(name):
-#     return render_template('user.html', name=name, current_time=datetime.utcnow())
